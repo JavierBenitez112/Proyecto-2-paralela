@@ -1,0 +1,21 @@
+$ for i in 1 2 3 4 5; do /tmp/aes_orig; done
+Clave encontrada: 12345
+Mensaje: Puedes lograrlo!
+Ejecucion: secuencial
+Tiempo: 0.005666 segundos
+Clave encontrada: 12345
+Mensaje: Puedes lograrlo!
+Ejecucion: secuencial
+Tiempo: 0.005137 segundos
+Clave encontrada: 12345
+Mensaje: Puedes lograrlo!
+Ejecucion: secuencial
+Tiempo: 0.004722 segundos
+Clave encontrada: 12345
+Mensaje: Puedes lograrlo!
+Ejecucion: secuencial
+Tiempo: 0.004776 segundos
+Clave encontrada: 12345
+Mensaje: Puedes lograrlo!
+Ejecucion: secuencial
+Tiempo: 0.004461 segundos

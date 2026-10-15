@@ -1,0 +1,2 @@
+$ gcc -std=c11 -O2 -Wall -Wextra docs/busqueda_clave_aes_secuencial.c -o /tmp/aes_orig -I/opt/homebrew/opt/openssl@3/include -L/opt/homebrew/opt/openssl@3/lib -lcrypto && echo compilado
+compilado

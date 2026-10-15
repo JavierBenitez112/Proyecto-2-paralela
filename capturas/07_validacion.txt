@@ -1,0 +1,2 @@
+$ /tmp/aes_mej -k 99999999
+La clave secreta debe ser < 2^20.

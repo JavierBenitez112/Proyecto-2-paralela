@@ -1,0 +1,16 @@
+$ /tmp/aes_mej -k 12345; /tmp/aes_mej -k 1048575 -m 'mensaje largo de mas de dieciseis bytes'; /tmp/aes_mej
+Rango: [0, 2^20) = 1048576 candidatas de 2^128
+Clave encontrada: 12345
+Mensaje: Puedes lograrlo!
+Ejecucion: secuencial
+Tiempo: 0.006097 segundos
+Rango: [0, 2^20) = 1048576 candidatas de 2^128
+Clave encontrada: 1048575
+Mensaje: mensaje largo de mas de dieciseis bytes
+Ejecucion: secuencial
+Tiempo: 0.383843 segundos
+Rango: [0, 2^20) = 1048576 candidatas de 2^128
+Clave encontrada: 460937
+Mensaje: Puedes lograrlo!
+Ejecucion: secuencial
+Tiempo: 0.169559 segundos
