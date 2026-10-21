@@ -1,0 +1,37 @@
+digraph flujo_mpi {
+  graph [fontname="DejaVu Sans", nodesep=0.35, ranksep=0.42, dpi=200, pad=0.2];
+  node  [fontname="DejaVu Sans", fontsize=12, shape=box, style="rounded,filled", fillcolor="#eaf1fb", color="#2f5597"];
+  edge  [fontname="DejaVu Sans", fontsize=10.5, color="#444444"];
+
+  ini    [label="MPI_Init, MPI_Comm_rank, MPI_Comm_size\nvalidar argumentos (parse_opciones)", fillcolor="#d9d9d9"];
+  bcast  [label="Proceso 0: cifrar el .txt (o leer cifrado.bin)\nMPI_Bcast del IV y del texto cifrado a todos"];
+  tramo  [label="calcular_tramo(): claves del proceso\n(estrategia 1 intercalada o 2 por bloques)"];
+  bar    [label="MPI_Barrier y MPI_Wtime (inicio)"];
+  probar [label="probar_clave(k): descifrar el mensaje\ncon la clave de 128 bits de k"];
+  frase  [label="¿Contiene la frase?", shape=diamond, fillcolor="#fff2cc", color="#bf9000"];
+  cada   [label="¿Pasaron 4096\ncandidatas?", shape=diamond, fillcolor="#fff2cc", color="#bf9000"];
+  probe  [label="MPI_Iprobe(FOUND)\n¿llegó un aviso?", shape=diamond, fillcolor="#fff2cc", color="#bf9000"];
+  lim    [label="¿Se pasó el\nlímite -t?", shape=diamond, fillcolor="#fff2cc", color="#bf9000"];
+  sig    [label="Siguiente k\n¿quedan claves?", shape=diamond, fillcolor="#fff2cc", color="#bf9000"];
+  isend  [label="MPI_Isend de la clave a cada\nproceso (etiqueta FOUND)", fillcolor="#e2efda", color="#538135"];
+  recv   [label="MPI_Recv del aviso\ny salir del ciclo", fillcolor="#fce4d6", color="#c55a11"];
+  red    [label="MPI_Allreduce (MIN): clave global y proceso que la halló\nMPI_Reduce: tiempo máximo (MAX), claves probadas (SUM)"];
+  pend   [label="MPI_Allreduce (SUM): ¿cuántos avisaron?\nMPI_Recv de los avisos pendientes, MPI_Waitall de los envíos"];
+  rep    [label="Proceso 0 imprime clave, proceso, intentos,\ntexto recuperado, tiempo y tasa (o estimación si -t)"];
+  fin    [label="MPI_Finalize", fillcolor="#d9d9d9"];
+
+  ini -> bcast -> tramo -> bar -> probar -> frase;
+  frase -> isend [label="sí"];
+  frase -> cada  [label="no"];
+  cada  -> probe [label="sí"];
+  cada  -> sig   [label="no"];
+  probe -> recv  [label="sí"];
+  probe -> lim   [label="no"];
+  lim   -> sig   [label="no"];
+  lim   -> red   [label="sí (NO ENCONTRADA\npor límite)"];
+  sig   -> probar [label="sí"];
+  sig   -> red   [label="no (rango agotado)"];
+  isend -> red;
+  recv  -> red;
+  red -> pend -> rep -> fin;
+}

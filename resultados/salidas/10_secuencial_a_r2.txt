@@ -1,0 +1,13 @@
+$ ./bin/busqueda_secuencial -i datos/prueba.txt -k 123456
+=== Busqueda AES-128 por fuerza bruta (secuencial) ===
+Rango:                [0, 2^56) = 72057594037927936 candidatas
+Frase de busqueda:    "es una prueba de"
+Motor AES:            AES-NI (instrucciones x86)
+Texto cifrado:        359cd2c020a980178a7b8c308a52de5fc366604366790dde92112ee7dd8344a56b28b214241ec71d3d42ec464eb6fba2  [48 B]
+Resultado:            CLAVE ENCONTRADA
+Clave (decimal):      123456
+Clave AES-128:        0000000000000000000000000001e240
+Texto descifrado:     "Esta es una prueba de proyecto 2"
+Claves probadas:      123457
+Tiempo de busqueda:   0.009183 s
+Tasa:                 13444086 claves/s

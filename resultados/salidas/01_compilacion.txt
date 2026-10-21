@@ -1,0 +1,12 @@
+$ make
+cc -Iinclude  -std=c11 -O2 -Wall -Wextra src/lab03/busqueda_clave_aes_secuencial.c -o bin/busqueda_clave_aes_secuencial  -lcrypto 
+cc -Iinclude  -std=c11 -O2 -Wall -Wextra -c src/lab03/busqueda_clave_aes_secuencial_mejorado.c -o build/lab03/busqueda_clave_aes_secuencial_mejorado.o
+cc -Iinclude  -std=c11 -O2 -Wall -Wextra -c src/common/aes_busqueda.c -o build/common/aes_busqueda.o
+cc build/lab03/busqueda_clave_aes_secuencial_mejorado.o build/common/aes_busqueda.o -o bin/busqueda_clave_aes_secuencial_mejorado  -lcrypto 
+cc -Iinclude  -std=c11 -O2 -Wall -Wextra -c src/proyecto02/aes_texto.c -o build/proyecto02/aes_texto.o
+cc -Iinclude  -std=c11 -O2 -Wall -Wextra -c src/common/aes_texto.c -o build/common/aes_texto.o
+cc build/proyecto02/aes_texto.o build/common/aes_texto.o -o bin/aes_texto  -lcrypto 
+mpicc -Iinclude  -std=c11 -O2 -Wall -Wextra -c src/proyecto02/busqueda_mpi.c -o build/proyecto02/busqueda_mpi.o
+mpicc build/proyecto02/busqueda_mpi.o build/common/aes_texto.o -o bin/busqueda_mpi  -lcrypto 
+cc -Iinclude  -std=c11 -O2 -Wall -Wextra -c src/proyecto02/busqueda_secuencial.c -o build/proyecto02/busqueda_secuencial.o
+cc build/proyecto02/busqueda_secuencial.o build/common/aes_texto.o -o bin/busqueda_secuencial  -lcrypto 

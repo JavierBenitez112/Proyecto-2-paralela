@@ -1,0 +1,12 @@
+$ ./bin/busqueda_secuencial -i datos/prueba.txt -k 18014398509481985 -t 30
+=== Busqueda AES-128 por fuerza bruta (secuencial) ===
+Rango:                [0, 2^56) = 72057594037927936 candidatas
+Frase de busqueda:    "es una prueba de"
+Motor AES:            AES-NI (instrucciones x86)
+Texto cifrado:        be76d08309540255e411fe5a1558c7e6c46cffeb887e507625d3a5f49c5d5a728278ca8bc05215000a1d83f34c8e2b5e  [48 B]
+Limite de tiempo:     30.0 s
+Resultado:            NO ENCONTRADA (se alcanzo el limite de 30.0 s)
+Claves probadas:      380891136
+Tiempo de busqueda:   30.000220 s
+Tasa:                 12696278 claves/s
+Estimacion para la clave 18014398509481985: 18014398509481986 intentos -> 1418872379.748492 s (~45 anios)

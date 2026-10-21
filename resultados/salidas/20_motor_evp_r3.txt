@@ -1,0 +1,13 @@
+$ ./bin/busqueda_secuencial -i datos/prueba.txt -k 67108863 -n 26 -a evp
+=== Busqueda AES-128 por fuerza bruta (secuencial) ===
+Rango:                [0, 2^26) = 67108864 candidatas
+Frase de busqueda:    "es una prueba de"
+Motor AES:            OpenSSL EVP
+Texto cifrado:        87846908893b621cd149db4c3d93f68361da71e43d71a98f59e09e94dbd7492b1462f317eecb4dfd2e8e4dc39c01c2a4  [48 B]
+Resultado:            CLAVE ENCONTRADA
+Clave (decimal):      67108863
+Clave AES-128:        00000000000000000000000003ffffff
+Texto descifrado:     "Esta es una prueba de proyecto 2"
+Claves probadas:      67108864
+Tiempo de busqueda:   14.839870 s
+Tasa:                 4522200 claves/s

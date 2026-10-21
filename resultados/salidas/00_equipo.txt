@@ -1,0 +1,7 @@
+$ uname -srm; nproc; lscpu | grep 'Model name'
+Linux 6.18.44-fc-v140 x86_64
+2
+Model name:                              Intel(R) Xeon(R) Processor @ 2.10GHz
+$ mpirun --version | head -1; openssl version
+mpirun (Open MPI) 4.1.6
+OpenSSL 3.0.13 30 Jan 2024 (Library: OpenSSL 3.0.13 30 Jan 2024)

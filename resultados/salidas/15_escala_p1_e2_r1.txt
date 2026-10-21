@@ -1,0 +1,14 @@
+$ mpirun --oversubscribe -np 1 ./bin/busqueda_mpi -i datos/prueba.txt -k 67108863 -n 26 -e 2
+=== Busqueda AES-128 por fuerza bruta (MPI, 1 procesos) ===
+Estrategia:           2 - bloques contiguos (alternativa)
+Rango:                [0, 2^26) = 67108864 candidatas
+Frase de busqueda:    "es una prueba de"
+Motor AES:            AES-NI (instrucciones x86)
+Resultado:            CLAVE ENCONTRADA
+Clave (decimal):      67108863
+Clave AES-128:        00000000000000000000000003ffffff
+Hallada por proceso:  0 (tras 67108864 intentos en su tramo, 5.276524 s)
+Texto descifrado:     "Esta es una prueba de proyecto 2"
+Claves probadas:      67108864 (suma de los 1 procesos)
+Tiempo de busqueda:   5.276524 s
+Tasa agregada:        12718385 claves/s (12718385 por proceso)

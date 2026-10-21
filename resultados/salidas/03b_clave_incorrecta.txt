@@ -1,0 +1,7 @@
+$ ./bin/aes_texto -d 123457 -i resultados/cifrado.bin -o resultados/basura.txt
+Error: la clave no descifra el archivo (relleno PKCS#7 invalido): clave incorrecta o archivo danado
+=== AES-128-CBC (descifrar) ===
+Clave (parametro):    123457
+Clave AES-128:        0000000000000000000000000001e241  [16 B]
+IV (del archivo):     863b4f0a53909f1037c012e25bea536f  [16 B]
+Texto cifrado:        86acd882078af06e092c014221f09194da9fd3f341dd38b37a599ccce94b86eed7b4b85bd4684436ef80262eeea45204  [48 B]

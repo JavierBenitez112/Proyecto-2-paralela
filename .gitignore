@@ -3,6 +3,12 @@ build/
 bin/
 *.o
 
+# Archivos de prueba sueltos (los de la bitacora van en resultados/)
+/*.bin
+/recuperado.txt
+resultados/basura.txt
+__pycache__/
+
 # Nix
 result
 result-*

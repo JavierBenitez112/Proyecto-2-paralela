@@ -1,0 +1,8 @@
+$ ./bin/aes_texto -e 123456 -i datos/prueba.txt -o resultados/cifrado.bin
+=== AES-128-CBC (cifrar) ===
+Clave (parametro):    123456
+Clave AES-128:        0000000000000000000000000001e240  [16 B]
+IV:                   863b4f0a53909f1037c012e25bea536f  [16 B]
+Texto original:       "Esta es una prueba de proyecto 2"  [32 B]
+Texto cifrado:        86acd882078af06e092c014221f09194da9fd3f341dd38b37a599ccce94b86eed7b4b85bd4684436ef80262eeea45204  [48 B]
+Archivo cifrado:      resultados/cifrado.bin (IV + cifrado, 64 B)

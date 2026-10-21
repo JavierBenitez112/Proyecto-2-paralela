@@ -12,7 +12,7 @@
       packages = forAllSystems (pkgs: {
         default = pkgs.stdenv.mkDerivation {
           pname = "aes-busqueda";
-          version = "0.1.0";
+          version = "1.0.0";
           src = self;
 
           nativeBuildInputs = [ pkgs.pkg-config pkgs.mpi ];
@@ -29,7 +29,10 @@
           app = name: { type = "app"; program = "${pkg}/bin/${name}"; };
         in
         {
-          default = app "busqueda_clave_aes_secuencial_mejorado";
+          default = app "busqueda_mpi";
+          busqueda_mpi = app "busqueda_mpi";
+          busqueda_secuencial = app "busqueda_secuencial";
+          aes_texto = app "aes_texto";
           original = app "busqueda_clave_aes_secuencial";
           mejorado = app "busqueda_clave_aes_secuencial_mejorado";
         });
