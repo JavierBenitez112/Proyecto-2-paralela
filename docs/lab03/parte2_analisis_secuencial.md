@@ -49,9 +49,9 @@ El tiempo es bajo y muy estable porque la clave 12345 está pegada al inicio del
 
 ## 7. Mejoras propuestas e implementadas
 
-Archivo: `busqueda_clave_aes_secuencial_mejorado.c`
-Compilar: `gcc -std=c11 -O2 -Wall -Wextra busqueda_clave_aes_secuencial_mejorado.c -o busqueda_clave_aes_secuencial_mejorado -lcrypto`
-Uso: `./busqueda_clave_aes_secuencial_mejorado [-n bits] [-k secreta] [-m mensaje]`
+Archivo: `src/lab03/busqueda_clave_aes_secuencial_mejorado.c` (rutinas comunes en `src/common/aes_busqueda.c`)
+Compilar: `make lab03` (o `nix build`) → `bin/busqueda_clave_aes_secuencial_mejorado`
+Uso: `./bin/busqueda_clave_aes_secuencial_mejorado [-n bits] [-k secreta] [-m mensaje]`
 
 | # | Mejora | Tipo | Justificación | Propuso |
 |---|---|---|---|---|
