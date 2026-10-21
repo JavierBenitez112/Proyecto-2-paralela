@@ -1,1 +1,16 @@
-capturas.sh
+# Compilacion
+build/
+bin/
+*.o
+
+# Nix
+result
+result-*
+.direnv/
+
+# Sistema / editores
+.DS_Store
+.vscode/
+.idea/
+*~
+~$*
