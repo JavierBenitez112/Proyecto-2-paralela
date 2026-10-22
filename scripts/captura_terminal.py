@@ -13,6 +13,7 @@ from PIL import Image, ImageDraw, ImageFont
 FUENTES = [
     "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf",
     "/usr/share/fonts/truetype/liberation/LiberationMono-Regular.ttf",
+    "/System/Library/Fonts/Menlo.ttc",
     "C:/Windows/Fonts/consola.ttf",
 ]
 FONDO, TEXTO, PROMPT, BARRA = (24, 26, 33), (220, 223, 228), (126, 211, 131), (52, 56, 66)

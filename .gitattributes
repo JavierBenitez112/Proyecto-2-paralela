@@ -1,0 +1,5 @@
+# Los scripts corren en bash (Linux, macOS, contenedor): siempre con LF
+*.sh   text eol=lf
+*.py   text eol=lf
+Makefile text eol=lf
+*.nix  text eol=lf
