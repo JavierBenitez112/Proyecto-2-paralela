@@ -45,7 +45,14 @@ if ./bin/aes_texto -e 1 -i /no/existe -o "$TMP/y" > /dev/null 2>&1; then
     mal "archivo inexistente"; else ok "archivo inexistente"; fi
 
 echo "== busqueda (rango 2^16)"
-for motor in evp aesni; do
+# AES-NI solo existe en x86; en otras CPU (p. ej. Apple Silicon) se prueba solo EVP
+motores="evp"
+if ./bin/busqueda_secuencial -i $TXT -k 1 -n 4 -a aesni > /dev/null 2>&1; then
+    motores="evp aesni"
+else
+    echo "  (AES-NI no disponible en esta CPU: se omiten las pruebas con -a aesni)"
+fi
+for motor in $motores; do
     for k in 0 1 12345 32767 32768 49151 65535; do
         espera_clave "secuencial -a $motor k=$k" $k ./bin/busqueda_secuencial -i $TXT -k $k -n 16 -a $motor
         for p in 1 2 3 4 5; do

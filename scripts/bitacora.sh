@@ -33,7 +33,7 @@ MPI_FLAGS=${MPI_FLAGS:-}
 # Como root (contenedores) Open MPI exige confirmacion; por variables de entorno
 # para que no aparezca en los comandos de las capturas.
 if [ "$(id -u)" = 0 ]; then export OMPI_ALLOW_RUN_AS_ROOT=1 OMPI_ALLOW_RUN_AS_ROOT_CONFIRM=1; fi
-if [ "$(nproc)" -lt "$NP" ]; then MPI_FLAGS="$MPI_FLAGS --oversubscribe"; fi
+if [ "$(getconf _NPROCESSORS_ONLN)" -lt "$NP" ]; then MPI_FLAGS="$MPI_FLAGS --oversubscribe"; fi
 
 TEXTO=datos/prueba.txt
 OUT=resultados

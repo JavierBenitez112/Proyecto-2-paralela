@@ -66,7 +66,7 @@ Con Nix: `nix develop` (gcc, OpenSSL, Open MPI, gdb, valgrind) y luego `make`;
 | Comando | Descripción |
 |---|---|
 | `make` | Compila todo (`lab03` + `proyecto02`) |
-| `make test` | Pruebas automáticas con rangos pequeños: ambas estrategias, ambos motores AES, P = 1..5, casos límite |
+| `make test` | Pruebas automáticas con rangos pequeños: ambas estrategias, ambos motores AES (AES-NI solo en x86), P = 1..5, casos límite |
 | `make demo` | Las pruebas a), b) y c) con `-np 4` y ambas estrategias (`LIMITE=30` s) |
 | `make bitacora` | Todas las mediciones del Anexo 2 → `resultados/` (salidas, `tiempos.csv`, `resumen.md`, capturas PNG) |
 | `make run-mpi PROG=busqueda_mpi NP=4 ARGS="..."` | `mpirun -np 4 ./bin/busqueda_mpi ...` |
